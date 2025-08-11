@@ -8,11 +8,13 @@ app.use(express.json());
 const analyticsRoutes = require("./routes/analyticsRoutes.js");
 const userRoutes = require("./routes/userRoutes.js");
 const inventoryRoutes = require('./routes/inventoryRoutes.js');
+const exportRoutes = require('./routes/exportRoutes.js');
 
 
 app.use('/api/analytics', analyticsRoutes);
 app.use('/', userRoutes);
 app.use('/', inventoryRoutes)
+app.use("/export", exportRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on the PORT: http://localhost:${PORT}`);
