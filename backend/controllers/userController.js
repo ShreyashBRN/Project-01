@@ -44,17 +44,6 @@ let customers = [
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
 exports.getAllEmployees = (req, res) => {
     res.status(200).json(employees);
 }
@@ -81,7 +70,7 @@ exports.updateEmployee = (req, res) => {
     const newBody = req.body;
     const upindexemp = employees.findIndex(emp => emp.id === id);
     if(upindexemp !== -1){
-        employees[upindexemp] ={ ...employees[upindexemp], ...newBody };
+        employees[upindexemp] = { ...employees[upindexemp], ...newBody };
         res.status(200).json({ message: "Employee updated", employee: employees[upindexemp] });
     }
     else{
@@ -90,6 +79,15 @@ exports.updateEmployee = (req, res) => {
 }
 
 exports.deleteEmployee = (req, res) => {
+    const id = parseInt(req.params.id);
+    const delempid = employees.findIndex(emp => emp.id === id);
+    if(delempid === -1){
+        res.status(404).json({ message: "Employee njot found" })
+    }
+    else{
+        employees.splice(delempid, 1);
+        res.status(200).json({ message: "Employee deleted", employees});
+    }
 }
 
 
@@ -109,9 +107,34 @@ exports.getCustomerById = (req, res) => {
         res.status(404).json({ message: "Customer not found" });
     }
 }
+
 exports.createCustomer = (req, res) => {
+    const newcustomer = req.body;
+    customers.push(newcustomer);
+    res.status(201).json(newEmployee);
+
 }
+
 exports.updateCustomer = (req, res) => {
+    const id = parseInt(req.params.id);
+    const newBody = req.body;
+    const upidcustom = customers.findIndex(cus => cus.id === id);
+    if(upidcustom !== -1){
+        customers[upidcustom] = { ...customers[upidcustom], ...newBody };
+        res.status(200).json({ message: "Employee updated", employee: customers[upidcustom] });
+    }
+
+
 }
+
 exports.deleteCustomer = (req, res) => {
+    const id = parseInt(req.params.id);
+    const delcusid = customers.findIndex(cus => cus.id === id);
+    if(delcusid === -1){
+        res.status(404).json({ message: "Customer not found" })
+    }
+    else{
+        customers.splice(delcusid, 1);
+        res.status(200).json({ message: "Customer deleted", customers});
+    }
 }
