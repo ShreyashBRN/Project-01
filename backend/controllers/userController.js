@@ -45,28 +45,44 @@ let customers = [
 
 
 exports.getAllEmployees = (req, res) => {
-    res.status(200).json(employees);
+    try {
+        res.status(200).json(employees);
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
+    }
 }
 
 exports.getEmployeeById = (req, res) => {
     const id = parseInt(req.params.id);
     const foundEmployee = employees.find(emp => emp.id === id);
-    if(foundEmployee) {
-        res.status(200).json({ message: "Employee found", employee: foundEmployee });
-    }
-    else{
-        res.status(404).json({ message: "Employee not found" });
+    try {
+          if(foundEmployee) {
+            res.status(200).json({ message: "Employee found", employee: foundEmployee });
+        }
+        else{
+            res.status(404).json({ message: "Employee not found" });
+        }
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
     }
 }
 
 exports.createEmployee = (req, res) => {
-    const newEmployee = req.body;
-    employees.push(newEmployee);
-    res.status(201).json(newEmployee);
+    try {
+         const newEmployee = req.body;
+        employees.push(newEmployee);
+        res.status(201).json(newEmployee);
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
+    }
 }
 
 exports.updateEmployee = (req, res) => {
-    const id = parseInt(req.params.id);
+    try {
+     const id = parseInt(req.params.id);
     const newBody = req.body;
     const upindexemp = employees.findIndex(emp => emp.id === id);
     if(upindexemp !== -1){
@@ -75,11 +91,17 @@ exports.updateEmployee = (req, res) => {
     }
     else{
         res.status(404).json({ message: "Employee not found" });
+    }   
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
     }
+    
 }
 
 exports.deleteEmployee = (req, res) => {
-    const id = parseInt(req.params.id);
+    try {
+     const id = parseInt(req.params.id);
     const delempid = employees.findIndex(emp => emp.id === id);
     if(delempid === -1){
         res.status(404).json({ message: "Employee njot found" })
@@ -87,7 +109,12 @@ exports.deleteEmployee = (req, res) => {
     else{
         employees.splice(delempid, 1);
         res.status(200).json({ message: "Employee deleted", employees});
+    }   
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
     }
+    
 }
 
 
@@ -96,8 +123,16 @@ exports.deleteEmployee = (req, res) => {
 
 
 exports.getAllCustomers = (req, res) => {
+    try {
+        res.status(200).json(customers);
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
+    }
 }
+
 exports.getCustomerById = (req, res) => {
+    try {
     const id = parseInt(req.params.id);
     const foundCustomer = customers.find(emp => emp.id === id);
     if(foundCustomer) {
@@ -105,30 +140,48 @@ exports.getCustomerById = (req, res) => {
     }
     else{
         res.status(404).json({ message: "Customer not found" });
+    }    
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
     }
+    
 }
 
 exports.createCustomer = (req, res) => {
-    const newcustomer = req.body;
+    try {
+      const newcustomer = req.body;
     customers.push(newcustomer);
-    res.status(201).json(newEmployee);
+    res.status(201).json(newEmployee);  
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
+    }
+    
 
 }
 
 exports.updateCustomer = (req, res) => {
-    const id = parseInt(req.params.id);
+    try {
+       const id = parseInt(req.params.id);
     const newBody = req.body;
     const upidcustom = customers.findIndex(cus => cus.id === id);
     if(upidcustom !== -1){
         customers[upidcustom] = { ...customers[upidcustom], ...newBody };
         res.status(200).json({ message: "Employee updated", employee: customers[upidcustom] });
+    } 
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
     }
+    
 
 
 }
 
 exports.deleteCustomer = (req, res) => {
-    const id = parseInt(req.params.id);
+    try {
+        const id = parseInt(req.params.id);
     const delcusid = customers.findIndex(cus => cus.id === id);
     if(delcusid === -1){
         res.status(404).json({ message: "Customer not found" })
@@ -137,4 +190,9 @@ exports.deleteCustomer = (req, res) => {
         customers.splice(delcusid, 1);
         res.status(200).json({ message: "Customer deleted", customers});
     }
+    } catch (error) {
+        console.error(error); // log for debugging
+    res.status(500).json({ message: "Something went wrong", error: error.message });
+    }
+    
 }
