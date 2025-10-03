@@ -1,8 +1,13 @@
-import React from 'react'
-
+import React from 'react';
+import NavBar from '../components/HomeNavbar';
+import displaysection from '../components/HomePageSection';
 const HomePage = () => {
   return (
-    <div></div>
+    <>
+    <NavBar />
+    <displaysection />
+
+    </>
   )
 }
 
