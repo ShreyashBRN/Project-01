@@ -11,20 +11,20 @@ import Export from "./pages/Export";
 
 const App = () => {
   return (
-    // <div className='bg-slate-600'>
-    //   <HomePage />
-    // </div>
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<DashboardLayout />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/inventory" element={<Inventory />} />
-        <Route path="/employees" element={<Employees />} />
-        <Route path="/export" element={<Export />} />
-      </Routes>
-    </Router>
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    
+    <Route path="/dashboard" element={<DashboardLayout />}>
+      <Route index element={<Dashboard />} />           {/* /dashboard */}
+      <Route path="analytics" element={<Analytics />} />  {/* /dashboard/analytics */}
+      <Route path="inventory" element={<Inventory />} />  {/* /dashboard/inventory */}
+      <Route path="employees" element={<Employees />} />  {/* /dashboard/employees */}
+      <Route path="export" element={<Export />} />        {/* /dashboard/export */}
+    </Route>
+  </Routes>
+</Router>
+
     
   )
 }

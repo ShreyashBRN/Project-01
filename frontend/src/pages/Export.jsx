@@ -1,8 +1,10 @@
 import React from 'react'
+import Sidebar from "../components/Sidebar";
 
 const Export = () => {
   return (
-    <div>Export</div>
+    <div>hy
+    </div>
   )
 }
 
