@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 const Export = () => {
   return (
-    <div>hy
+    <div className='bg-black'>
     </div>
   )
 }

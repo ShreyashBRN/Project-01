@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom"; // used for nested routes
 
 const DashboardLayout = () => {
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-black">
       {/* Sidebar */}
       <Sidebar />
 
