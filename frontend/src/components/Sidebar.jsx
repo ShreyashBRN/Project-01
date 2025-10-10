@@ -1,21 +1,23 @@
 // src/components/Sidebar.js
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { GoHome } from "react-icons/go";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-slate-800 text-white flex flex-col p-4">
+    <div className="w-64 h-screen bg-[#12121a] text-white flex flex-col p-4">
       <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
 
       <NavLink
         to="/dashboard"
+        end
         className={({ isActive }) =>
           `p-2 rounded mb-2 hover:bg-slate-600 ${isActive ? "bg-slate-700" : ""}`
         }
       >
+        
         Dashboard
       </NavLink>
-
       <NavLink
         to="/dashboard/analytics"
         className={({ isActive }) =>
