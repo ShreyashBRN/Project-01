@@ -3,6 +3,8 @@ import React from "react";
 import { FiRefreshCcw } from "react-icons/fi"; 
 import { useState } from "react";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
+import { ProgressCircle } from "@chakra-ui/react";
+
 
 
 
@@ -80,6 +82,15 @@ const Dashboard = () => {
 
         <div className="h-[250px] w-[300px]  bg-[#12121a]  mt-[89px] rounded-[20px]">
           <p></p>
+          
+          <ProgressCircle.Root value={progress} size="xl" colorPalette='cyan'>
+    <ProgressCircle.Circle>
+      <ProgressCircle.Track />
+      <ProgressCircle.Range strokeLinecap="round" />
+    </ProgressCircle.Circle>
+    <ProgressCircle.ValueText>{progress}%</ProgressCircle.ValueText>
+  </ProgressCircle.Root>
+  
 
           <p></p>
           </div>
