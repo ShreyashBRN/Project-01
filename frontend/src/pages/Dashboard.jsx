@@ -10,7 +10,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 // import Calendar from 'react-calendar';
 import { Calendar } from "@/components/ui/calendar"
-
+import ExpenseGraph from "../components/expenseGraphDashboard"
 
 const Dashboard = () => {
           const percentage = 66;
@@ -102,7 +102,20 @@ const [date, setDate] = React.useState(new Date())
       </div>
 
       <div className="flex gap-5">
-        <div className="w-[650px] h-[295px] bg-[#12121a]  rounded-[20px]">box5</div>
+        <div className="w-[650px] h-[295px] bg-[#12121a]  rounded-[20px]">
+          <ExpenseGraph />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         <div className="flex flex-col gap-4">
           <p className="text-white text-[20px]">Upcoming Events</p>
           <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center">box1</div>
