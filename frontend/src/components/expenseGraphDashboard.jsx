@@ -26,7 +26,7 @@ const InteractiveBarChart = () => {
     <div className="h-[300px]  bg-gray-950 flex items-center justify-center p-8 rounded-[12px]">
       <div className="w-full max-w-4xl">
         <div className="relative">
-            <div className='text-[22px] flex gap-2'><p className='underline decoration-blue-600'>Daily</p>    Sales Breakdowwn</div>
+            <div className='text-[22px] flex gap-2'><p className='underline decoration-blue-600'>Daily</p>Sales Breakdown</div>
           {/* Bars Container */}
           <div className="flex items-end justify-around gap-2 h-64 px-4">
             {barData.map((bar, index) => (

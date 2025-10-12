@@ -11,9 +11,11 @@ import 'react-circular-progressbar/dist/styles.css';
 // import Calendar from 'react-calendar';
 import { Calendar } from "@/components/ui/calendar"
 import ExpenseGraph from "../components/expenseGraphDashboard"
+import { BsPersonCircle } from "react-icons/bs";
+
 
 const Dashboard = () => {
-          const percentage = 66;
+          const percentage = 75;
           const EmployeeCount = 12;
 
 
@@ -39,7 +41,7 @@ const [date, setDate] = React.useState(new Date())
 
       <div className="flex ">
         <div className="flex flex-col gap-4">
-        <p className="text-[45px] text-white">11 October</p>
+        <p className="text-[45px] text-white">12 October</p>
           <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-white flex justify-between items-center pl-6 pr-6">
             <p className="w-[300px] text-[13px] pt-1 pb-1 leading-[14px]">Use the refresh button to fetch the most recent data in real time and latest system activity.</p>
             <button
@@ -117,10 +119,25 @@ const [date, setDate] = React.useState(new Date())
 
 
         <div className="flex flex-col gap-4">
-          <p className="text-white text-[20px]">Upcoming Events</p>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center">box1</div>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center">box1</div>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center">box1</div>
+          <p className="text-white text-[20px]">Recent Orders</p>
+          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+            <BsPersonCircle size={40} className="ml-4" />
+            <p className="text-blue-600">#14526</p>
+            <p className="">Harry Donaldson</p>
+
+          </div>
+          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+            <BsPersonCircle size={40} className="ml-4" />
+            <p className="text-blue-600">#14526</p>
+            <p className="">Harry Donaldson</p>
+
+          </div>
+          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+            <BsPersonCircle size={40} className="ml-4" />
+            <p className="text-blue-600">#14526</p>
+            <p className="">Harry Donaldson</p>
+
+          </div>
         </div>
       </div>
 
