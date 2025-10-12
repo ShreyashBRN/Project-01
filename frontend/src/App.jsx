@@ -7,11 +7,10 @@ import Analytics from "./pages/Analytics";
 import Inventory from "./pages/Inventory";
 import Employees from "./pages/Employees";
 import Export from "./pages/Export";
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+// import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 
 const App = () => {
   return (
-    <ChakraProvider value={defaultSystem}> 
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -25,7 +24,6 @@ const App = () => {
           </Route>
         </Routes>
       </Router>
-    </ChakraProvider>
   )
 }
 

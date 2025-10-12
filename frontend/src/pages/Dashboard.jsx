@@ -1,14 +1,20 @@
 // src/pages/Dashboard.js
-import React from "react";
+// import React from "react";
 import { FiRefreshCcw } from "react-icons/fi"; 
-import { useState } from "react";
+// import { useState } from "react";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
-import { ProgressCircle } from "@chakra-ui/react";
-
-
+import 'js-circle-progress';
+// import { ProgressCircle } from "@chakra-ui/react";
+import React, {  useState } from "react";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+// import Calendar from 'react-calendar';
+import { Calendar } from "@/components/ui/calendar"
 
 
 const Dashboard = () => {
+          const percentage = 66;
+          const EmployeeCount = 12;
 
 
   const [rotate, setRotate] = useState(false);
@@ -22,20 +28,9 @@ const Dashboard = () => {
   const handleChange = (e) => {
     setProgress(Number(e.target.value));
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+ 
+const [date, setDate] = React.useState(new Date())
 
   return (
 
@@ -49,7 +44,7 @@ const Dashboard = () => {
             <p className="w-[300px] text-[13px] pt-1 pb-1 leading-[14px]">Use the refresh button to fetch the most recent data in real time and latest system activity.</p>
             <button
         onClick={handleClick}
-        className="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+        className="p-3  bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
       >
         <FiRefreshCcw size={20}
           className={`text-3xl ${rotate ? "animate-spin" : ""} transition-transform`}
@@ -80,24 +75,28 @@ const Dashboard = () => {
         </div>
       </div>
 
-        <div className="h-[250px] w-[300px]  bg-[#12121a]  mt-[89px] rounded-[20px]">
-          <p></p>
+        <div className="h-[250px] w-[300px]  bg-[#12121a]  mt-[89px] rounded-[20px] flex flex-col gap-2 items-center justify-center">
+         <div className="text-center flex flex-col gap- mt-4"> <p className="text-[22px]">Inventory Progress</p>
+          <p className="-mt-2 text-[#70707c]">________________________________</p></div>
+          <div className="" style={{ width: 130, height: 130 }}>
+          <CircularProgressbar value={percentage} text={`${percentage}%`} />
+          </div>
           
-          <ProgressCircle.Root value={progress} size="xl" colorPalette='cyan'>
-    <ProgressCircle.Circle>
-      <ProgressCircle.Track />
-      <ProgressCircle.Range strokeLinecap="round" />
-    </ProgressCircle.Circle>
-    <ProgressCircle.ValueText>{progress}%</ProgressCircle.ValueText>
-  </ProgressCircle.Root>
-  
-
-          <p></p>
+          <p className="text-[14px] text-[#82829e] mb-5">Employees Count: {EmployeeCount}</p>
           </div>
 
       <div className="flex flex-col gap-3">
         <p className="text-white text-[45px] ">Calendar</p>
-        <div className="h-[250px] w-[300px] rounded-[20px] bg-[#12121a] ">box4</div>
+        <div className="h-[250px] w-[330px] rounded-[20px] bg-[#12121a] ">
+          <div className="scale-x-125 scale-y-90 origin-top-left mt-2 ml-2">
+          <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-lg border text-white  bg-black"
+  />
+  </div>
+        </div>
       </div>
 
       </div>
