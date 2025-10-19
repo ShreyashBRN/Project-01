@@ -13,7 +13,7 @@ const HomeNavbar = () => {
     <div className="flex gap-6">
     <ul className='bg-white w-24 h-10 pt-1 border-2 rounded-2xl  border-gray-400 text-center'>About</ul>
     <ul className='bg-white w-24 h-10 pt-1 border-2 rounded-2xl  border-gray-400 text-center'>SignUp</ul>
-    <ul className='bg-white w-24 h-10 pt-1 border-2 rounded-2xl  border-gray-400 text-center'>Login</ul>
+    <ul className='bg-white w-24 h-10 pt-1  border-2 rounded-2xl  border-gray-400 text-center'>Login</ul>
     </div>
 </nav>
 );
