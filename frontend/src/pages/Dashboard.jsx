@@ -36,7 +36,7 @@ const [date, setDate] = React.useState(new Date())
 
   return (
 
-    <div className="text-white ml-12 flex flex-col gap-6">
+    <div className="text-white ml-12 flex flex-col gap-6 mt-7">
       <div className="flex items-center gap-5">
 
       <div className="flex ">
@@ -103,7 +103,7 @@ const [date, setDate] = React.useState(new Date())
 
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 mt-20">
         <div className="w-[650px] h-[295px] bg-[#12121a]  rounded-[20px]">
           <ExpenseGraph />
         </div>
