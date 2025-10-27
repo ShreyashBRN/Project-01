@@ -42,7 +42,7 @@ const [date, setDate] = React.useState(new Date())
       <div className="flex ">
         <div className="flex flex-col gap-4">
         <p className="text-[45px] text-white">12 October</p>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-white flex justify-between items-center pl-6 pr-6">
+          <div className="w-[420px] h-[70px] bg-[rgba(47,47,67)]  rounded-[40px] text-white flex justify-between items-center pl-6 pr-6">
             <p className="w-[300px] text-[13px] pt-1 pb-1 leading-[14px]">Use the refresh button to fetch the most recent data in real time and latest system activity.</p>
             <button
         onClick={handleClick}
@@ -54,7 +54,7 @@ const [date, setDate] = React.useState(new Date())
       </button>
 
             </div>
-          <div className="w-[420px] h-[170px] bg-[#12121a] flex rounded-[20px] items-center text-center gap-5">
+          <div className="w-[420px] h-[170px] bg-[rgba(47,47,67)] flex rounded-[20px] items-center text-center gap-5">
             <div>
             <HiMiniCurrencyDollar size={110} color="white" />
             </div>
@@ -77,7 +77,7 @@ const [date, setDate] = React.useState(new Date())
         </div>
       </div>
 
-        <div className="h-[250px] w-[300px]  bg-[#12121a]  mt-[89px] rounded-[20px] flex flex-col gap-2 items-center justify-center">
+        <div className="h-[250px] w-[300px]  bg-[rgba(47,47,67)]  mt-[89px] rounded-[20px] flex flex-col gap-2 items-center justify-center">
          <div className="text-center flex flex-col gap- mt-4"> <p className="text-[22px]">Inventory Progress</p>
           <p className="-mt-2 text-[#70707c]">________________________________</p></div>
           <div className="" style={{ width: 130, height: 130 }}>
@@ -89,7 +89,7 @@ const [date, setDate] = React.useState(new Date())
 
       <div className="flex flex-col gap-3">
         <p className="text-white text-[45px] ">Calendar</p>
-        <div className="h-[250px] w-[330px] rounded-[20px] bg-[#12121a] ">
+        <div className="h-[250px] w-[330px] rounded-[20px] bg-[rgba(47,47,67)]">
           <div className="scale-x-125 scale-y-90 origin-top-left mt-2 ml-2">
           <Calendar
     mode="single"
@@ -120,19 +120,19 @@ const [date, setDate] = React.useState(new Date())
 
         <div className="flex flex-col gap-4">
           <p className="text-white text-[20px]">Recent Orders</p>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+          <div className="w-[420px] h-[70px] bg-[rgba(47,47,67)]  rounded-[40px] text-center flex gap-16 items-center">
             <BsPersonCircle size={40} className="ml-4" />
             <p className="text-blue-600">#14526</p>
             <p className="">Harry Donaldson</p>
 
           </div>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+          <div className="w-[420px] h-[70px] bg-[rgba(47,47,67)]  rounded-[40px] text-center flex gap-16 items-center">
             <BsPersonCircle size={40} className="ml-4" />
             <p className="text-blue-600">#14526</p>
             <p className="">Harry Donaldson</p>
 
           </div>
-          <div className="w-[420px] h-[70px] bg-[#12121a]  rounded-[40px] text-center flex gap-16 items-center">
+          <div className="w-[420px] h-[70px] bg-[rgba(47,47,67)]  rounded-[40px] text-center flex gap-16 items-center">
             <BsPersonCircle size={40} className="ml-4" />
             <p className="text-blue-600">#14526</p>
             <p className="">Harry Donaldson</p>
